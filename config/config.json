@@ -1,0 +1,199 @@
+{
+    "gouliang": {
+        "name": "gouliang",
+
+        "reward_is_sold": true,
+        "is_choose_friend": true,
+        "sleep_time":0,
+        "is_get_energy":true,
+
+        "success_image": "success.png",
+        "select_image": "select.png",
+        "powerless_image": "powerless.png",
+        "no_redwater_image": "no_redwater.png",
+        "victory_image": "victory.png",
+        "failed_image": "failed.png",
+        "resurrection_image": "resurrection.png",
+        "sold_five_star_rune_image": "sold_five_star_rune.png",
+
+        "five_start_sold_box":[522,272,1636,805],
+        "powerless_box":[590,282,1565,810],
+        "no_redwater_box":[590,282,1565,800],
+        "select_box":[900, 220, 1245, 525],
+        "success_box":[980, 130, 1175, 230],
+        "failed_box":[980, 130, 1180, 225],
+        "end_box":[440,510,800,660],
+        "resurrection_box":[600, 635, 1000, 775],
+
+        "select_points":[[1800, 780]],
+        "end_points":[[700, 600]],
+        "failed_points":[[1350, 730], [1200, 450]],
+
+        "reward_sold_points":[[900, 870]],
+        "reward_keep_points":[[1200, 870]],
+        "reward_treasure_points":[[1100, 900]],
+
+        "choose_friend_point":[[180, 950]],
+
+        "gift_box_point": [[1250, 700]],
+        "gift_close_point": [[1520, 226]],
+        "shop_point": [[900, 700]],
+        "gift_first_energy":[[1350, 400]],
+
+
+        "shop_energy_point": [[900, 600]],
+        "shop_purchase": [[925, 675]],
+        "shop_close_point": [[1090, 945]],
+
+        "fix_start_sold_point":[[900, 650]]
+  },
+
+    "dragon": {
+        "name": "dragon",
+
+        "reward_is_sold": false,
+        "is_choose_friend": false,
+        "sleep_time":40,
+        "is_get_energy":true,
+
+        "success_image": "success.png",
+        "select_image": "select.png",
+        "powerless_image": "powerless.png",
+        "no_redwater_image": "no_redwater.png",
+        "victory_image": "victory.png",
+        "failed_image": "failed.png",
+        "resurrection_image": "resurrection.png",
+        "sold_five_star_rune_image": "sold_five_star_rune.png",
+
+        "five_start_sold_box":[522,272,1636,805],
+        "powerless_box":[590,282,1565,810],
+        "no_redwater_box":[590,282,1565,800],
+        "select_box":[900, 220, 1245, 525],
+        "success_box":[980, 130, 1175, 230],
+        "failed_box":[980, 130, 1180, 225],
+        "end_box":[440,510,800,660],
+        "resurrection_box":[600, 635, 1000, 775],
+
+        "select_points":[[1800, 780]],
+        "end_points":[[700, 600]],
+        "failed_points":[[1350, 730], [1200, 450]],
+
+        "reward_sold_points":[[900, 870]],
+        "reward_keep_points":[[1200, 870]],
+        "reward_treasure_points":[[1100, 900]],
+
+        "choose_friend_point":[[950, 130]],
+
+        "gift_box_point": [[1250, 700]],
+        "gift_close_point": [[1520, 226]],
+        "shop_point": [[900, 700]],
+        "gift_first_energy":[[1350, 400]],
+
+
+        "shop_energy_point": [[900, 600]],
+        "shop_purchase": [[925, 675]],
+        "shop_close_point": [[1090, 945]],
+
+        "fix_start_sold_point":[[900, 650]]
+
+  },
+
+    "dixiacheng": {
+        "name": "dixiacheng",
+
+        "reward_is_sold": true,
+        "is_choose_friend": false,
+        "sleep_time":0,
+        "is_get_energy":true,
+
+        "success_image": "pass_dixiacheng.png",
+        "select_image": "select.png",
+        "powerless_image": "powerless.png",
+        "no_redwater_image": "no_redwater.png",
+        "victory_image": "victory.png",
+        "failed_image": "failed.png",
+        "resurrection_image": "resurrection.png",
+        "sold_five_star_rune_image": "sold_five_star_rune.png",
+
+        "five_start_sold_box":[522,272,1636,805],
+        "powerless_box":[590,282,1565,810],
+        "no_redwater_box":[590,282,1565,800],
+        "select_box":[900, 220, 1245, 525],
+        "success_box":[1045, 118, 1354, 220],
+        "failed_box":[980, 130, 1180, 225],
+        "end_box":[440,510,800,660],
+        "resurrection_box":[600, 635, 1000, 775],
+
+        "select_points":[[1800, 780]],
+        "end_points":[[700, 600]],
+        "failed_points":[[1350, 730], [1200, 450]],
+
+        "reward_sold_points":[[900, 870]],
+        "reward_keep_points":[[1200, 870]],
+        "reward_treasure_points":[[1100, 840  ]],
+
+        "choose_friend_point":[[300, 950]],
+
+        "gift_box_point": [[1250, 700]],
+        "gift_close_point": [[1520, 226]],
+        "shop_point": [[900, 700]],
+        "gift_first_energy":[[1350, 400]],
+
+
+        "shop_energy_point": [[900, 600]],
+        "shop_purchase": [[925, 675], [1080, 650]],
+        "shop_close_point": [[1090, 945]],
+
+        "fix_start_sold_point":[[900, 650]]
+  },
+
+    "tower": {
+        "name": "tower",
+
+        "reward_is_sold": false,
+        "is_choose_friend": false,
+        "sleep_time":0,
+        "is_get_energy":true,
+
+        "success_image": "success.png",
+        "select_image": "select.png",
+        "powerless_image": "powerless.png",
+        "no_redwater_image": "no_redwater.png",
+        "victory_image": "victory.png",
+        "failed_image": "failed.png",
+        "resurrection_image": "resurrection.png",
+        "sold_five_star_rune_image": "sold_five_star_rune.png",
+
+        "five_start_sold_box":[522,272,1636,805],
+        "powerless_box":[590,282,1565,810],
+        "no_redwater_box":[590,282,1565,800],
+        "select_box":[900, 220, 1245, 525],
+        "success_box":[980, 130, 1175, 230],
+        "failed_box":[980, 130, 1180, 225],
+        "end_box":[440,510,800,660],
+        "resurrection_box":[600, 635, 1000, 775],
+
+        "select_points":[[1800, 780]],
+        "end_points":[[700, 600]],
+        "failed_points":[[1350, 730], [1200, 450]],
+
+        "reward_sold_points":[[900, 870]],
+        "reward_keep_points":[[1200, 870]],
+        "reward_treasure_points":[[1100, 900]],
+
+        "choose_friend_point":[[950, 130]],
+
+        "gift_box_point": [[1250, 700]],
+        "gift_close_point": [[1520, 226]],
+        "shop_point": [[900, 700]],
+        "gift_first_energy":[[1350, 400]],
+
+
+        "shop_energy_point": [[900, 600]],
+        "shop_purchase": [[925, 675], [1100, 900]],
+        "shop_close_point": [[1090, 945]],
+
+        "fix_start_sold_point":[[900, 650]]
+
+  }
+}
