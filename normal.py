@@ -63,8 +63,6 @@ class Moling(object):
                 self.enable_shop = False
                 self.win_count += 1
                 logging.info("Battle win [{}] times".format(self.win_count))
-                if self.win_count == 40:
-                    exit()
                 self.is_shootscreen = True
                 self.conf.click_victory()
                 logging.info("Battle Start...")
