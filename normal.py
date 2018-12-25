@@ -108,13 +108,14 @@ class Moling(object):
                 pass
 
 if __name__ == '__main__':
-    #G = Moling("gouliang")
-    G = Moling("dixiacheng")
+    G = Moling("gouliang")
+    #G = Moling("dixiacheng")
     #G = Moling("dragon")
     #G = Moling("tower")
     G.run()
 
-    # os.system('adb shell screencap -p /sdcard/current.png')
+    #os.system('adb shell input keyevent 26')
+
     # os.system('adb pull /sdcard/current.png current.png')
     #
     # image = Image.open("./current.png")

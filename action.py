@@ -1,7 +1,7 @@
 # coding : utf-8
 from PIL import Image
 from img2 import classfiy_histogram_with_split
-from tools import click_position
+from tools import click_position, lock_screen
 import random
 import time
 import os
@@ -90,6 +90,7 @@ class Action(object):
         if self.is_select(image1):
             # for
             if self.script == "gouliang" and not self.is_choose_friend:
+                lock_screen()
                 exit()
             return self.STATE_SELECT
 

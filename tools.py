@@ -11,6 +11,7 @@ def execute_cmd(cmd):
     else:
         stdout = '/dev/null'
     os.system(cmd + " >" + stdout + " 2>&1")
+    #\  os.system(cmd)
 
 
 def click_position(x, y):
@@ -21,6 +22,9 @@ def click_position(x, y):
     cmd = 'adb shell input swipe {} {} {} {} {}'.format(x, y, x, y, press_time)
     os.system(cmd)
     pass
+
+def lock_screen():
+    os.system('adb shell input keyevent 26')
 
 
 

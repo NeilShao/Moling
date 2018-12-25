@@ -3,7 +3,7 @@
         "name": "gouliang",
 
         "reward_is_sold": true,
-        "is_choose_friend": true,
+        "is_choose_friend": false,
         "sleep_time":0,
         "is_get_energy":true,
 
@@ -42,7 +42,7 @@
 
 
         "shop_energy_point": [[900, 600]],
-        "shop_purchase": [[925, 675]],
+        "shop_purchase": [[925, 675], [1100, 660]],
         "shop_close_point": [[1090, 945]],
 
         "fix_start_sold_point":[[900, 650]]
@@ -91,7 +91,7 @@
 
 
         "shop_energy_point": [[900, 600]],
-        "shop_purchase": [[925, 675]],
+        "shop_purchase": [[925, 675], [1100, 660]],
         "shop_close_point": [[1090, 945]],
 
         "fix_start_sold_point":[[900, 650]]
@@ -190,7 +190,7 @@
 
 
         "shop_energy_point": [[900, 600]],
-        "shop_purchase": [[925, 675], [1100, 900]],
+        "shop_purchase": [[925, 675], [1100, 660]],
         "shop_close_point": [[1090, 945]],
 
         "fix_start_sold_point":[[900, 650]]
