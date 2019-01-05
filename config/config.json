@@ -5,7 +5,8 @@
         "reward_is_sold": true,
         "is_choose_friend": false,
         "sleep_time":0,
-        "is_get_energy":true,
+        "is_get_energy_from_gift": true,
+        "is_get_energy_from_shop": false,
 
         "success_image": "success.png",
         "select_image": "select.png",
@@ -54,7 +55,8 @@
         "reward_is_sold": false,
         "is_choose_friend": false,
         "sleep_time":40,
-        "is_get_energy":true,
+        "is_get_energy_from_gift": true,
+        "is_get_energy_from_shop": false,
 
         "success_image": "success.png",
         "select_image": "select.png",
@@ -104,7 +106,8 @@
         "reward_is_sold": true,
         "is_choose_friend": false,
         "sleep_time":0,
-        "is_get_energy":true,
+        "is_get_energy_from_gift": true,
+        "is_get_energy_from_shop": false,
 
         "success_image": "pass_dixiacheng.png",
         "select_image": "select.png",
@@ -153,7 +156,8 @@
         "reward_is_sold": false,
         "is_choose_friend": false,
         "sleep_time":0,
-        "is_get_energy":true,
+        "is_get_energy_from_gift": true,
+        "is_get_energy_from_shop": false,
 
         "success_image": "success.png",
         "select_image": "select.png",

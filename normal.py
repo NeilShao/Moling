@@ -97,7 +97,7 @@ class Moling(object):
         else:
             logging.debug("... ...")
 
-        time.sleep(3)
+        time.sleep(1)
 
 
     def run(self):
@@ -108,8 +108,8 @@ class Moling(object):
                 pass
 
 if __name__ == '__main__':
-    G = Moling("gouliang")
-    #G = Moling("dixiacheng")
+    #G = Moling("gouliang")
+    G = Moling("dixiacheng")
     #G = Moling("dragon")
     #G = Moling("tower")
     G.run()

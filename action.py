@@ -59,7 +59,8 @@ class Action(object):
 
         self.is_sold = config["reward_is_sold"]
 
-        self.is_get_energy = config["is_get_energy"]
+        self.is_get_energy_from_gift = config["is_get_energy_from_gift"]
+        self.is_get_energy_from_shop = config["is_get_energy_from_shop"]
 
         self.gift_box_point = config["gift_box_point"]
         self.gift_first_energy = config["gift_first_energy"]
@@ -90,7 +91,7 @@ class Action(object):
         if self.is_select(image1):
             # for
             if self.script == "gouliang" and not self.is_choose_friend:
-                lock_screen()
+                #lock_screen()
                 exit()
             return self.STATE_SELECT
 
@@ -260,25 +261,27 @@ class Action(object):
                 time.sleep(1)
 
     def no_power(self, is_shop=False):
-        if self.is_get_energy:
+
             # get energy from gift box
             if not is_shop:
-                click_position(self.gift_box_point[0][0], self.gift_box_point[0][1])
-                time.sleep(0.2)
-                click_position(self.gift_first_energy[0][0], self.gift_first_energy[0][1])
-                time.sleep(0.2)
-                click_position(self.gift_close_point[0][0], self.gift_close_point[0][1])
+                if self.is_get_energy_form_gift:
+                    click_position(self.gift_box_point[0][0], self.gift_box_point[0][1])
+                    time.sleep(0.2)
+                    click_position(self.gift_first_energy[0][0], self.gift_first_energy[0][1])
+                    time.sleep(0.2)
+                    click_position(self.gift_close_point[0][0], self.gift_close_point[0][1])
             # get energy from shop
             else:
-                click_position(self.shop_point[0][0], self.shop_point[0][1])
-                time.sleep(0.2)
-                click_position(self.shop_energy_point[0][0], self.shop_energy_point[0][1])
-                time.sleep(0.2)
-                click_position(self.shop_purchase[0][0], self.shop_purchase[0][1])
-                time.sleep(0.2)
-                click_position(self.shop_purchase[1][0], self.shop_purchase[1][1])
-                time.sleep(0.2)
-                click_position(self.shop_close_point[0][0], self.shop_close_point[0][1])
+                if self.is_get_energy_form_shop:
+                    click_position(self.shop_point[0][0], self.shop_point[0][1])
+                    time.sleep(0.2)
+                    click_position(self.shop_energy_point[0][0], self.shop_energy_point[0][1])
+                    time.sleep(0.2)
+                    click_position(self.shop_purchase[0][0], self.shop_purchase[0][1])
+                    time.sleep(0.2)
+                    click_position(self.shop_purchase[1][0], self.shop_purchase[1][1])
+                    time.sleep(0.2)
+                    click_position(self.shop_close_point[0][0], self.shop_close_point[0][1])
 
 
 if __name__ == '__main__':
