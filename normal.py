@@ -55,10 +55,10 @@ class Moling(object):
             elif self.current_state == self.conf.STATE_SUCCESS:
                 logging.info("Battle Success")
                 self.conf.click_reward_open()
-                try:
-                    shutil.copyfile('current.png', os.path.join(CUR_PATH, 'rune/' + str(time.time()) + '.png'))
-                except:
-                    pass
+                # try:
+                #     shutil.copyfile('current.png', os.path.join(CUR_PATH, 'rune/' + str(time.time()) + '.png'))
+                # except:
+                #     pass
             elif self.current_state == self.conf.STATE_SUCCESS_END:
                 self.enable_shop = False
                 self.win_count += 1
@@ -114,7 +114,7 @@ if __name__ == '__main__':
     #G = Moling("tower")
     G.run()
 
-    #os.system('adb shell input keyevent 26')
+    #os.system('adb sh ell input keyevent 26')
 
     # os.system('adb pull /sdcard/current.png current.png')
     #

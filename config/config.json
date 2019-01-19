@@ -6,7 +6,7 @@
         "is_choose_friend": false,
         "sleep_time":0,
         "is_get_energy_from_gift": true,
-        "is_get_energy_from_shop": false,
+        "is_get_energy_from_shop": true,
 
         "success_image": "success.png",
         "select_image": "select.png",
@@ -107,7 +107,7 @@
         "is_choose_friend": false,
         "sleep_time":0,
         "is_get_energy_from_gift": true,
-        "is_get_energy_from_shop": false,
+        "is_get_energy_from_shop": true,
 
         "success_image": "pass_dixiacheng.png",
         "select_image": "select.png",

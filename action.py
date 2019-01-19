@@ -91,7 +91,7 @@ class Action(object):
         if self.is_select(image1):
             # for
             if self.script == "gouliang" and not self.is_choose_friend:
-                #lock_screen()
+                lock_screen()
                 exit()
             return self.STATE_SELECT
 
@@ -264,15 +264,18 @@ class Action(object):
 
             # get energy from gift box
             if not is_shop:
-                if self.is_get_energy_form_gift:
+                if self.is_get_energy_from_gift:
                     click_position(self.gift_box_point[0][0], self.gift_box_point[0][1])
                     time.sleep(0.2)
                     click_position(self.gift_first_energy[0][0], self.gift_first_energy[0][1])
                     time.sleep(0.2)
                     click_position(self.gift_close_point[0][0], self.gift_close_point[0][1])
+                else:
+                    lock_screen()
+                    exit()
             # get energy from shop
             else:
-                if self.is_get_energy_form_shop:
+                if self.is_get_energy_from_shop:
                     click_position(self.shop_point[0][0], self.shop_point[0][1])
                     time.sleep(0.2)
                     click_position(self.shop_energy_point[0][0], self.shop_energy_point[0][1])
@@ -282,6 +285,9 @@ class Action(object):
                     click_position(self.shop_purchase[1][0], self.shop_purchase[1][1])
                     time.sleep(0.2)
                     click_position(self.shop_close_point[0][0], self.shop_close_point[0][1])
+                else:
+                    lock_screen()
+                    exit()
 
 
 if __name__ == '__main__':
