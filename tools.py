@@ -1,4 +1,5 @@
 import os
+import time
 import random
 import platform
 
@@ -22,6 +23,15 @@ def click_position(x, y):
     cmd = 'adb shell input swipe {} {} {} {} {}'.format(x, y, x, y, press_time)
     os.system(cmd)
     pass
+
+def click_positions(positions):
+    if len(positions) == 1:
+        click_position(positions[0][0], positions[0][1])
+        return
+
+    for position in positions:
+        click_position(position[0], position[1])
+        time.sleep(2)
 
 def lock_screen():
     os.system('adb shell input keyevent 26')

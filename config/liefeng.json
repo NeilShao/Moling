@@ -1,0 +1,52 @@
+{
+  	"replay" : {
+		"researchTitle" : "replay",
+		"coordinate" : [[1130, 800] ],
+		"returnMsg" : "战斗结束， 再来一次"
+	},
+    "start": {
+        "researchTitle" : "start",
+        "coordinate" : [[2655, 1010] ],
+        "returnMsg" : "战斗开始"
+    },
+    "victory" : {
+		"researchTitle" : "best damage",
+		"coordinate" : [[1850, 820], [1850, 820], [1850, 820]],
+		"returnMsg" : "战斗胜利,已完成战斗{}次"
+	},
+    "grindstone" : {
+		"researchTitle" : "grindstone",
+		"coordinate" : [[1760, 1030]],
+		"returnMsg" : "获取精炼石"
+	},
+    "reward" : {
+		"researchTitle" : "current amount",
+		"coordinate" : [ [1560, 1130]],
+		"returnMsg" : "获取材料"
+	},
+    "rune": {
+        "researchTitle" : "rune",
+		"coordinate" : [ [1350, 1150]],
+		"returnMsg" : "卖出符文"
+    },
+    "trophy": {
+       "researchTitle" : "trophy box",
+		"coordinate" : [ [1560, 1200]],
+		"returnMsg" : "战斗结束"
+    },
+    "no_energy": {
+        "researchTitle" : "not enough energy",
+        "coordinate" : [[1320, 900], [1810, 900]],
+        "returnMsg" : "没有足够能量了"
+    },
+    "gift": {
+        "researchTitle" : "collect the gift box",
+        "coordinate" : [[1920, 535], [2130, 300]],
+        "returnMsg" : "收取能量"
+    },
+    "shop": {
+        "researchTitle" : "purchase the enery by crystal",
+        "coordinate" : [[1350, 750], [1320, 900], [1550, 1200]],
+        "returnMsg" : "收取能量"
+    }
+}
