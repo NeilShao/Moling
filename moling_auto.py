@@ -70,7 +70,7 @@ class App(BaseApp.Base):
     # 收取能量次数
     collectNum = 0
 
-    use_crystal = False
+    use_crystal = True
     # 是否调试
     debug = False
 
@@ -131,18 +131,14 @@ class App(BaseApp.Base):
                         if index == 2:
                             save_debug_creenshot()
                         click_position(position[0], position[1])
-                        time.sleep(2)
-                    self.insertMsg(msg)
-                    click_positions(self.config[key]['coordinate'])
-                    countMsg = "战斗{}次\n死亡{}次\n购买能量{}次\n收取能量{}次\n".format(self.num, self.deathNum, self.buyNum,
-                                                                         self.collectNum)
-                    self.countText.config(text=countMsg)
-                    return True
+                        if index != len(self.config[key]['coordinate']) - 1:
+                            time.sleep(2)
 
-                if key == 'death':
+                elif key == 'death':
                     self.deathNum += 1
+                    click_positions(self.config[key]['coordinate'])
 
-                if key == 'no_energy':
+                elif key == 'no_energy':
                     self.insertMsg(msg)
                     if self.use_crystal:
                         self.buyNum += 1
@@ -154,10 +150,11 @@ class App(BaseApp.Base):
                         click_position(self.config[key]['coordinate'][1][0], self.config[key]['coordinate'][1][1])
                         click_positions(self.config['gift']['coordinate'])
                         msg = self.config['gift']['returnMsg']
+                else:
+                    click_positions(self.config[key]['coordinate'])
 
                 # 发送消息提醒
                 self.insertMsg(msg)
-                click_positions(self.config[key]['coordinate'])
                 countMsg = "战斗{}次\n死亡{}次\n购买能量{}次\n收取能量{}次\n".format(self.num, self.deathNum, self.buyNum, self.collectNum)
                 self.countText.config(text=countMsg)
                 return True

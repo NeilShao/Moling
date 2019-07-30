@@ -25,13 +25,10 @@ def click_position(x, y):
     pass
 
 def click_positions(positions):
-    if len(positions) == 1:
-        click_position(positions[0][0], positions[0][1])
-        return
-
-    for position in positions:
+    for index, position in enumerate(positions):
         click_position(position[0], position[1])
-        time.sleep(2)
+        if index != len(position) - 1:
+            time.sleep(1)
 
 def lock_screen():
     os.system('adb shell input keyevent 26')
