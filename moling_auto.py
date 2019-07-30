@@ -45,7 +45,9 @@ def binarizing(img, threshold):
 
 
 # 保存收货的页面
-def save_debug_creenshot(ts, im):
+def save_debug_creenshot():
+    execute_cmd('adb shell screencap -p /sdcard/current.png')
+    execute_cmd('adb pull /sdcard/current.png current.png')
     shutil.copyfile('current.png', os.path.join(CUR_PATH, 'rune/' + str(time.time()) + '.png'))
 
 class App(BaseApp.Base):
@@ -65,6 +67,8 @@ class App(BaseApp.Base):
     deathNum = 0
     # 购买能量次数
     buyNum = 0
+    # 收取能量次数
+    collectNum = 0
 
     use_crystal = False
     # 是否调试
@@ -91,7 +95,7 @@ class App(BaseApp.Base):
     def __handle(self):
         currentAction = self.jiaoben.get()
         fileName = 'ta.json'
-        if (currentAction == '狗粮'):
+        if currentAction == '狗粮':
             fileName = 'gouliang.json'
 
         if currentAction == '地下城':
@@ -120,27 +124,33 @@ class App(BaseApp.Base):
         for key in self.config:
             if researchMsg.find(self.config[key]['researchTitle']) != -1:
                 msg = self.config[key]['returnMsg']
-                # 当处于胜利的时候.需要点击出宝箱,后再点击取消胜利品弹框
                 if key == 'victory':
                     self.num += 1
                     msg = self.config[key]['returnMsg'].format(self.num)
-                # save_debug_creenshot(int(time.time()), im)
-                # 战斗死亡.需要点击多一次显示
-                if key == 'defeat':
-                    click_position(self.config[key]['coordinate'][0], self.config[key]['coordinate'][1])
-                    time.sleep(1)
-                # 战斗死亡,增加死亡记录
-                if key == 'death' or key == 'defeat':
+                    for index, position in enumerate(self.config[key]['coordinate']):
+                        if index == 2:
+                            save_debug_creenshot()
+                        click_position(position[0], position[1])
+                        time.sleep(2)
+                    self.insertMsg(msg)
+                    click_positions(self.config[key]['coordinate'])
+                    countMsg = "战斗{}次\n死亡{}次\n购买能量{}次\n收取能量{}次\n".format(self.num, self.deathNum, self.buyNum,
+                                                                         self.collectNum)
+                    self.countText.config(text=countMsg)
+                    return True
+
+                if key == 'death':
                     self.deathNum += 1
 
                 if key == 'no_energy':
                     self.insertMsg(msg)
-                    exit()
                     if self.use_crystal:
+                        self.buyNum += 1
                         click_position(self.config[key]['coordinate'][0][0], self.config[key]['coordinate'][0][1])
                         click_positions(self.config['shop']['coordinate'])
                         msg = self.config['shop']['returnMsg']
                     else:
+                        self.collectNum += 1
                         click_position(self.config[key]['coordinate'][1][0], self.config[key]['coordinate'][1][1])
                         click_positions(self.config['gift']['coordinate'])
                         msg = self.config['gift']['returnMsg']
@@ -148,7 +158,7 @@ class App(BaseApp.Base):
                 # 发送消息提醒
                 self.insertMsg(msg)
                 click_positions(self.config[key]['coordinate'])
-                countMsg = "战斗{}次\n死亡{}次\n购买能量{}次\n".format(self.num, self.deathNum, self.buyNum)
+                countMsg = "战斗{}次\n死亡{}次\n购买能量{}次\n收取能量{}次\n".format(self.num, self.deathNum, self.buyNum, self.collectNum)
                 self.countText.config(text=countMsg)
                 return True
 
