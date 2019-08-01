@@ -70,9 +70,10 @@ class App(BaseApp.Base):
     # 收取能量次数
     collectNum = 0
 
-    use_crystal = True
+    use_crystal = False
     # 是否调试
     debug = False
+    lastStatus = ""
 
     def __init__(self):
         BaseApp.Base.__init__(self, self.start, self.stop)
@@ -146,6 +147,10 @@ class App(BaseApp.Base):
                         click_positions(self.config['shop']['coordinate'])
                         msg = self.config['shop']['returnMsg']
                     else:
+                        if self.lastStatus == key:
+                            self.use_crystal = True
+                            return True
+
                         self.collectNum += 1
                         click_position(self.config[key]['coordinate'][1][0], self.config[key]['coordinate'][1][1])
                         click_positions(self.config['gift']['coordinate'])
@@ -157,6 +162,7 @@ class App(BaseApp.Base):
                 self.insertMsg(msg)
                 countMsg = "战斗{}次\n死亡{}次\n购买能量{}次\n收取能量{}次\n".format(self.num, self.deathNum, self.buyNum, self.collectNum)
                 self.countText.config(text=countMsg)
+                self.lastStatus = key
                 return True
 
     def open(self):

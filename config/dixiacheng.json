@@ -26,8 +26,8 @@
 	},
 	"shop": {
 		"researchTitle" : "purchase the enery by crystal",
-		"coordinate" : [[1350, 750], [1320, 900], [1550, 1200]],
-		"returnMsg" : "收取能量"
+		"coordinate" : [[1350, 750], [1320, 900], [1550, 850], [1550, 1200]],
+		"returnMsg" : "购买能量"
 	},
 	"sellstone": {
 		"researchTitle" : "would you like to sell it",
