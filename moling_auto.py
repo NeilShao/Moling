@@ -19,12 +19,6 @@ CUR_PATH = os.path.dirname(os.path.abspath(__file__))
 logging.basicConfig(level=logging.INFO,
                     format="%(asctime)s - %(message)s")
 
-
-screenshot_backup_dir = 'screenshot_backups/'
-if not os.path.isdir(screenshot_backup_dir):
-    os.mkdir(screenshot_backup_dir)
-
-
 # 截屏
 def pull_screenshot():
     execute_cmd('adb shell screencap -p /sdcard/current.png')
@@ -59,6 +53,8 @@ class App(BaseApp.Base):
     statusTips = '未开始'
     # 选中的脚本
     jiaoben = ''
+    # 选中的手机
+    mobile = ''
     # 配置脚本
     config = ''
     # 战斗次数
@@ -94,19 +90,27 @@ class App(BaseApp.Base):
 
     # 执行开始
     def __handle(self):
-        currentAction = self.jiaoben.get()
+        jiaoben = self.jiaoben.get()
         fileName = 'ta.json'
-        if currentAction == '狗粮':
+        if jiaoben == '狗粮':
             fileName = 'gouliang.json'
-
-        if currentAction == '地下城':
+        elif jiaoben == '地下城':
             fileName = 'dixiacheng.json'
-
-        if currentAction == '裂缝':
+        elif jiaoben == '裂缝':
             fileName = 'liefeng.json'
+
+        mobile = self.mobile.get()
+        mobile_name = ""
+        if mobile == '一加':
+            mobile_file = 'oneplus.json'
+        elif mobile == '锤子':
+            mobile_file = 'smartision.json'
 
         with open('./config/' + fileName, 'r', encoding='UTF-8') as f:
             self.config = json.load(f)
+
+        with open('./config/mobile/' + mobile_file, 'r', encoding='UTF-8') as f:
+            self.coordinate = json.load(f)
 
         while self.status:
             pull_screenshot()
@@ -167,6 +171,12 @@ class App(BaseApp.Base):
 
     def open(self):
         BaseApp.Base.mainloop(self)
+
+    def click_positions(self, positions):
+        for index, position in enumerate(positions):
+            click_position(position[0], position[1])
+            if index != len(position) - 1:
+                time.sleep(1)
 
 
 app = App()

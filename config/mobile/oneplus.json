@@ -4,7 +4,6 @@
     "noReplay": [2020, 800],
     "material": [1550, 1200],
     "sellRune": [1350, 1160],
-    "getRune":  [1780, 1160]
-
-
+    "getRune":  [1780, 1160],
+    "sellHighRune": [1320, 900]
 }

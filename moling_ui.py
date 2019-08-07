@@ -33,6 +33,7 @@ class Base(Frame):
 		topFrame.pack(side=TOP)
 		# 创建下拉框
 		self.__craeteCombobox(topFrame)
+		self.__craeteComboboxMoblie(topFrame)
 		# 底部展示战斗日志以及统计
 		bottomFrame = Frame(mainFrame)
 		bottomFrame.pack(side=BOTTOM)
@@ -84,6 +85,21 @@ class Base(Frame):
 		#self.jiaoben.grid(column=1, row=0)
 		self.jiaoben.current(0)
 		self.jiaoben.pack()
+
+
+	# 脚本配置选择
+	def __craeteComboboxMoblie(self,frame):
+		Label(frame, text='选择手机').pack()
+		self.mobile = ttk.Combobox(frame, width=12, state='readonly')
+		if self.currentDevice == 'mobile':
+			self.mobile['values'] = ('一加', '锤子')
+		else:
+			self.mobile['values'] = ('巨人','龙','死亡','塔','裂缝', '狗粮')
+
+		#self.jiaoben.grid(column=1, row=0)
+		self.mobile.current(0)
+		self.mobile.pack()
+
 
 	# 插入提示
 	def insertMsg(self,msg):

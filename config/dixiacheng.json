@@ -1,17 +1,17 @@
 {
     "replay" : {
 		"researchTitle" : "replay",
-		"coordinate" : [[1130, 800] ],
+		"coordinate" : ["replay"],
 		"returnMsg" : "战斗结束， 再来一次"
 	},
 	"start": {
 		"researchTitle" : "durand",
-		"coordinate" : [[2655, 1010] ],
+		"coordinate" : ["start"],
 		"returnMsg" : "战斗开始"
 	},
 	"victory" : {
 		"researchTitle" : "reward",
-		"coordinate" : [[1770, 1185], [1770, 1185], [1770, 1185], [1550, 1200]],
+		"coordinate" : ["getRune", "getRune", "getRune", "material"],
 		"returnMsg" : "战斗胜利,已完成战斗{}次"
 	},
 	"no_energy": {
@@ -31,7 +31,7 @@
 	},
 	"sellstone": {
 		"researchTitle" : "would you like to sell it",
-		"coordinate" : [[1320, 900]],
+		"coordinate" : ["sellHighRune"],
 		"returnMsg" : "卖出高价符文"
 	},
 	"death": {
@@ -41,7 +41,7 @@
 	},
 	"prepare": {
 		"researchTitle" : "prepare",
-		"coordinate" : [[1130, 800] ],
+		"coordinate" : ["replay"],
 		"returnMsg" : "战斗准备"
 	}
 

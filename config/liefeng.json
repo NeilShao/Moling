@@ -1,12 +1,12 @@
 {
   	"replay" : {
 		"researchTitle" : "replay",
-		"coordinate" : [[1130, 800] ],
+		"coordinate" : ["replay"],
 		"returnMsg" : "战斗结束， 再来一次"
 	},
     "start": {
         "researchTitle" : "start",
-        "coordinate" : [[2655, 1010] ],
+        "coordinate" : ["start"],
         "returnMsg" : "战斗开始"
     },
     "victory" : {
