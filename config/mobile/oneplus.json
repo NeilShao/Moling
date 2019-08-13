@@ -5,5 +5,10 @@
     "material": [1550, 1200],
     "sellRune": [1350, 1160],
     "getRune":  [1780, 1160],
-    "sellHighRune": [1320, 900]
+    "sellHighRune": [1320, 900],
+    "getHighRune": [1810, 900],
+    "revive": [],
+    "noRevive": [1980, 950],
+    "buyEnergy":[[1350, 750], [1320, 900], [1550, 850], [1550, 1200]],
+    "collectEnergy":[[1920, 535], [2130, 300]]
 }

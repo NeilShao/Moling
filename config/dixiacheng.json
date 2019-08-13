@@ -16,17 +16,17 @@
 	},
 	"no_energy": {
 		"researchTitle" : "not enough energy",
-		"coordinate" : [[1320, 900], [1810, 900]],
+		"coordinate" : ["sellHighRune", "getHighRune"],
 		"returnMsg" : "没有足够能量了"
 	},
 	"gift": {
 		"researchTitle" : "collect the gift box",
-		"coordinate" : [[1920, 535], [2130, 300]],
+		"coordinate" : ["collectEnergy"],
 		"returnMsg" : "收取能量"
 	},
 	"shop": {
 		"researchTitle" : "purchase the enery by crystal",
-		"coordinate" : [[1350, 750], [1320, 900], [1550, 850], [1550, 1200]],
+		"coordinate" : ["buyEnergy"],
 		"returnMsg" : "购买能量"
 	},
 	"sellstone": {
@@ -36,7 +36,7 @@
 	},
 	"death": {
 		"researchTitle" : "revive now",
-		"coordinate" : [[1980, 950]],
+		"coordinate" : ["noRevive"],
 		"returnMsg" : "战斗失败"
 	},
 	"prepare": {

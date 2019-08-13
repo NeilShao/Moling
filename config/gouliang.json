@@ -1,38 +1,48 @@
 {
 	"replay" : {
 		"researchTitle" : "replay",
-		"coordinate" : [[1130, 800] ],
+		"coordinate" : ["replay"],
 		"returnMsg" : "战斗结束， 再来一次"
 	},
 	"start": {
-		"researchTitle" : "start",
-		"coordinate" : [[2655, 1010] ],
+		"researchTitle" : "durand",
+		"coordinate" : ["start"],
 		"returnMsg" : "战斗开始"
 	},
 	"victory" : {
 		"researchTitle" : "reward",
-		"coordinate" : [[1370, 1185], [1370, 1185], [1370, 1185], [1550, 1200]],
+		"coordinate" : ["sellRune", "sellRune", "sellRune", "material"],
 		"returnMsg" : "战斗胜利,已完成战斗{}次"
 	},
 	"no_energy": {
 		"researchTitle" : "not enough energy",
-		"coordinate" : [[1320, 900], [1810, 900]],
+		"coordinate" : ["sellHighRune", "getHighRune"],
 		"returnMsg" : "没有足够能量了"
 	},
 	"gift": {
 		"researchTitle" : "collect the gift box",
-		"coordinate" : [[1920, 535], [2130, 300]],
+		"coordinate" : ["collectEnergy"],
 		"returnMsg" : "收取能量"
 	},
 	"shop": {
 		"researchTitle" : "purchase the enery by crystal",
-		"coordinate" : [[1350, 750], [1320, 900], [1550, 1200]],
+		"coordinate" : ["buyEnergy"],
 		"returnMsg" : "收取能量"
 	},
 	"sellstone": {
 		"researchTitle" : "would you like to sell it",
-		"coordinate" : [[1320, 900]],
+		"coordinate" : ["sellHighRune"],
 		"returnMsg" : "卖出高价符文"
+	},
+	"death": {
+		"researchTitle" : "revive now",
+		"coordinate" : ["noRevive"],
+		"returnMsg" : "战斗失败"
+	},
+	"prepare": {
+		"researchTitle" : "prepare",
+		"coordinate" : ["replay"],
+		"returnMsg" : "战斗准备"
 	}
 
 }
