@@ -86,6 +86,7 @@ class App(BaseApp.Base):
         self.alertTips.config(text='运行ing')
         self.threadObject = threading.Thread(target=self.__handle, name='LoopThread')
         self.threadObject.start()
+        self.coordinate = json.load(open('./config/coordinate.json', 'r', encoding='UTF-8'))
 
     # 暂停
     def stop(self):
@@ -131,20 +132,20 @@ class App(BaseApp.Base):
                     for index, position in enumerate(self.config[key]['coordinate']):
                         if index == 2:
                             save_debug_creenshot()
-                        click_position(position[0], position[1])
+                        self.__click_position(position)
                         if index != len(self.config[key]['coordinate']) - 1:
                             time.sleep(2)
 
                 elif key == 'death':
                     self.deathNum += 1
-                    click_positions(self.config[key]['coordinate'])
+                    self.__click_positions(self.config[key]['coordinate'])
 
                 elif key == 'no_energy':
                     self.insertMsg(msg)
                     if self.use_crystal:
                         self.buyNum += 1
-                        click_position(self.config[key]['coordinate'][0][0], self.config[key]['coordinate'][0][1])
-                        click_positions(self.config['shop']['coordinate'])
+                        self.__click_position(self.config[key]['coordinate'][0])
+                        self.__click_positions(self.config['shop']['coordinate'])
                         msg = self.config['shop']['returnMsg']
                     else:
                         if self.lastStatus == key:
@@ -152,11 +153,18 @@ class App(BaseApp.Base):
                             return True
 
                         self.collectNum += 1
-                        click_position(self.config[key]['coordinate'][1][0], self.config[key]['coordinate'][1][1])
-                        click_positions(self.config['gift']['coordinate'])
+                        self.__click_position(self.config[key]['coordinate'][1])
+                        self.__click_positions(self.config['gift']['coordinate'])
                         msg = self.config['gift']['returnMsg']
+                elif key == 'prepare':
+                    self.__click_positions(self.config[key]['coordinate'])
+                    if self.lastStatus != "death" and self.jiaoben.get() == '狗粮':
+                        msg = "有魔灵满级了， 需要更换魔灵"
+                        self.insertMsg(msg)
+                        self.stop()
+                        return True
                 else:
-                    click_positions(self.config[key]['coordinate'])
+                    self.__click_positions(self.config[key]['coordinate'])
 
                 # 发送消息提醒
                 self.insertMsg(msg)
@@ -167,6 +175,23 @@ class App(BaseApp.Base):
 
     def open(self):
         BaseApp.Base.mainloop(self)
+
+    def __click_position(self, position):
+        if isinstance(position, str):
+            self.__click_position(self.coordinate[position])
+        else:
+            click_position(position[0], position[1])
+
+    def __click_positions(self, positions):
+        for index, position in enumerate(positions):
+            if type(self.coordinate[position][0]) == list:
+                for childen_postion in self.coordinate[position]:
+                    self.__click_position(childen_postion)
+            else:
+                self.__click_position(self.coordinate[position])
+
+            if index != len(position) - 1:
+                time.sleep(1)
 
 
 app = App()

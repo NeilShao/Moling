@@ -24,11 +24,6 @@ def click_position(x, y):
     os.system(cmd)
     pass
 
-def click_positions(positions):
-    for index, position in enumerate(positions):
-        click_position(position[0], position[1])
-        if index != len(position) - 1:
-            time.sleep(1)
 
 def lock_screen():
     os.system('adb shell input keyevent 26')
