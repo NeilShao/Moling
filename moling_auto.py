@@ -99,17 +99,11 @@ class App(BaseApp.Base):
         elif jiaoben == '裂缝':
             fileName = 'liefeng.json'
 
-        mobile = self.mobile.get()
-        mobile_name = ""
-        if mobile == '一加':
-            mobile_file = 'oneplus.json'
-        elif mobile == '锤子':
-            mobile_file = 'smartision.json'
-
         with open('./config/' + fileName, 'r', encoding='UTF-8') as f:
             self.config = json.load(f)
 
-        with open('./config/mobile/' + mobile_file, 'r', encoding='UTF-8') as f:
+        size = git_screen_size()
+        with open('./config/mobile/{}.json'.format(size), 'r', encoding='UTF-8') as f:
             self.coordinate = json.load(f)
 
         while self.status:

@@ -29,6 +29,12 @@ def lock_screen():
     os.system('adb shell input keyevent 26')
 
 
+def git_screen_size():
+    result = os.popen("adb shell wm size").read()
+    return result.replace('Physical size:', '').strip()
+
+
+
 
 
 
