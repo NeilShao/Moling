@@ -82,7 +82,6 @@ class App(BaseApp.Base):
         self.alertTips.config(text='运行ing')
         self.threadObject = threading.Thread(target=self.__handle, name='LoopThread')
         self.threadObject.start()
-        self.coordinate = json.load(open('./config/coordinate.json', 'r', encoding='UTF-8'))
 
     # 暂停
     def stop(self):
@@ -166,6 +165,7 @@ class App(BaseApp.Base):
                         msg = "有魔灵满级了， 需要更换魔灵"
                         self.insertMsg(msg)
                         self.stop()
+                        lock_screen()
                         return True
                 else:
                     self.__click_positions(self.config[key]['coordinate'])

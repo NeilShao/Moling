@@ -1,9 +1,15 @@
 {
-    "start":    [2655, 1010],
-    "replay":   [1130, 800],
-    "noReplay": [2020, 800],
-    "material": [1550, 1200],
-    "sellRune": [1350, 1160],
-    "getRune":  [1780, 1160],
-    "sellHighRune": [1320, 900]
+    "start":    [1800, 780],
+    "replay":   [740, 600],
+    "noReplay": [1400, 600],
+    "material": [1080, 860],
+    "sellRune": [900, 870],
+    "getRune":  [1200, 870],
+    "sellHighRune": [900, 670],
+    "getHighRune": [1250, 670],
+    "revive": [800, 700],
+    "noRevive": [1350, 700],
+    "buyEnergy":[[950, 650], [910, 670], [1070, 653],[1075, 945]],
+    "collectEnergy":[[1330, 400], [1520, 200]],
+    "choose_firend": [130, 960]
 }
