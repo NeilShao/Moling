@@ -48,5 +48,10 @@
         "researchTitle" : "purchase the enery by crystal",
 		"coordinate" : ["buyEnergy"],
         "returnMsg" : "购买能量"
-    }
+    },
+  	"network": {
+		"researchTitle" : "unstable network",
+		"coordinate" : ["sellHighRune"],
+		"returnMsg" : "网络不稳定"
+	}
 }

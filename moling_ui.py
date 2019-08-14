@@ -7,6 +7,7 @@ import threading
 from tkinter import *
 from tkinter import ttk
 
+
 class Base(Frame):
 
 	# 状态文字

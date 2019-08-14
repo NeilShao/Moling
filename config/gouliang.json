@@ -43,6 +43,11 @@
 		"researchTitle" : "prepare",
 		"coordinate" : ["replay"],
 		"returnMsg" : "战斗准备"
+	},
+	"network": {
+		"researchTitle" : "unstable network",
+		"coordinate" : ["sellHighRune"],
+		"returnMsg" : "网络不稳定"
 	}
 
 }

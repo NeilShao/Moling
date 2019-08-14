@@ -1,6 +1,7 @@
 # coding: utf-8
 # 魔灵辅助2.0
 import os
+import re
 import time
 import json
 import logging
@@ -38,11 +39,19 @@ def binarizing(img, threshold):
     return img
 
 
-# 保存收货的页面
-def save_debug_creenshot():
-    execute_cmd('adb shell screencap -p /sdcard/current.png')
-    execute_cmd('adb pull /sdcard/current.png current.png')
-    shutil.copyfile('current.png', os.path.join(CUR_PATH, 'rune/' + str(time.time()) + '.png'))
+def save_debug_creenshot(info):
+    shutil.copyfile('current.png', os.path.join(CUR_PATH, 'rune/' + str(time.time()) + info + '_.png'))
+
+
+def judge_delete_rune(data):
+    position = re.findall(r'Rune \((\d)\)', data)
+    if position and int(position[0]) % 2 == 0:
+        # 2,4,6号位符文 加固定值 直接扔
+        attribute = re.findall(r"((HP|DEF|ATK|SPD|CRI Rate|CRI Dmg|Resistance|Accuracy) ?\+\d+%?)", data)
+        if attribute[0][0].find("%") == -1 and attribute[0][0].find("SPD") == -1:
+            return True
+
+    return False
 
 class App(BaseApp.Base):
     # 执行状态
@@ -117,6 +126,20 @@ class App(BaseApp.Base):
             self.__handleAction(data, im)
             time.sleep(1)
 
+    def __dealRune(self):
+        pull_screenshot()
+        im = Images.open("./current.png")
+        img = im.convert('L')
+        img = binarizing(img, 180)
+        data = pytesseract.image_to_string(img)
+        if judge_delete_rune(data):
+            self.__click_position("sellRune")
+            save_debug_creenshot("sell")
+        else:
+            self.__click_position("getRune")
+            save_debug_creenshot("get")
+
+
     # 动作开始
     def __handleAction(self, researchMsg, im):
         print(researchMsg)
@@ -127,9 +150,10 @@ class App(BaseApp.Base):
                     self.num += 1
                     msg = self.config[key]['returnMsg'].format(self.num)
                     for index, position in enumerate(self.config[key]['coordinate']):
-                        if index == 2:
-                            save_debug_creenshot()
-                        self.__click_position(position)
+                        if index == 2 and self.jiaoben.get() == '地下城':
+                            self.__dealRune()
+                        else:
+                            self.__click_position(position)
                         if index != len(self.config[key]['coordinate']) - 1:
                             time.sleep(2)
 
