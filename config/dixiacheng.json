@@ -5,7 +5,7 @@
 		"returnMsg" : "战斗结束， 再来一次"
 	},
 	"start": {
-		"researchTitle" : "durand",
+		"researchTitle" : "tart",
 		"coordinate" : ["start"],
 		"returnMsg" : "战斗开始"
 	},
