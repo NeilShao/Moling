@@ -5,7 +5,7 @@
 		"returnMsg" : "战斗结束， 再来一次"
 	},
 	"start": {
-		"researchTitle" : "durand",
+		"researchTitle" : "start",
 		"coordinate" : ["start"],
 		"returnMsg" : "战斗开始"
 	},
@@ -53,5 +53,10 @@
 		"researchTitle" : "network connection",
 		"coordinate" : ["sellHighRune"],
 		"returnMsg" : "网络不稳定"
+	},
+	"next stage": {
+		"researchTitle" : "next stage",
+		"coordinate" : ["replay"],
+		"returnMsg" : "下一层"
 	}
 }
