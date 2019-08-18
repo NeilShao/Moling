@@ -5,7 +5,11 @@
 		"returnMsg" : "战斗结束， 再来一次"
 	},
 	"start": {
+<<<<<<< HEAD
 		"researchTitle" : "start",
+=======
+		"researchTitle" : "tart",
+>>>>>>> f5bd43c62afe549c8b2ce37322576d9335bd396c
 		"coordinate" : ["start"],
 		"returnMsg" : "战斗开始"
 	},
