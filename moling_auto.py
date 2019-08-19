@@ -14,6 +14,7 @@ import threading
 # import atx
 import moling_ui as BaseApp
 from tools import *
+from rune_judge import Rune
 
 CUR_PATH = os.path.dirname(os.path.abspath(__file__))
 
@@ -42,16 +43,13 @@ def binarizing(img, threshold):
 def save_debug_creenshot(info):
     shutil.copyfile('current.png', os.path.join(CUR_PATH, 'rune/' + str(time.time()) + info + '_.png'))
 
-
 def judge_delete_rune(data):
-    position = re.findall(r'Rune \((\d)\)', data)
-    if position and int(position[0]) % 2 == 0:
-        # 2,4,6号位符文 加固定值 直接扔
-        attribute = re.findall(r"((HP|DEF|ATK|SPD|CRI Rate|CRI Dmg|Resistance|Accuracy) ?\+\d+%?)", data)
-        if attribute[0][0].find("%") == -1 and attribute[0][0].find("SPD") == -1:
-            return True
-
-    return False
+    try:
+        rune = Rune(data)
+        return rune.is_sell_rune()
+    except:
+        return False
+        pass
 
 class App(BaseApp.Base):
     # 执行状态
@@ -129,9 +127,12 @@ class App(BaseApp.Base):
     def __dealRune(self):
         pull_screenshot()
         im = Images.open("./current.png")
+        region = (im.size[0] * 0.31, im.size[1] * 0.25, im.size[0] * 0.69, im.size[1] * 0.75)
+        im = im.crop(region)
         img = im.convert('L')
-        img = binarizing(img, 180)
+        img = binarizing(img, 120)
         data = pytesseract.image_to_string(img)
+        print(data)
         if judge_delete_rune(data):
             self.__click_position("sellRune")
             save_debug_creenshot("sell")
